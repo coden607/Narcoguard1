@@ -3,9 +3,9 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import PayPalButton from "@/components/paypal-button"
 import { Heart, Lightbulb, Users, Shield } from "lucide-react"
 import { SmartWatchShowcase } from "@/components/smartwatch-showcase"
-import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "Donate to Narcoguard | Support Our Mission",
@@ -87,21 +87,7 @@ export default function DonatePage() {
             <CardContent>
               <div className="flex flex-col items-center justify-center p-6 bg-muted/20 rounded-lg">
                 <h3 className="text-xl font-semibold mb-6">Donate via PayPal</h3>
-                <div id="paypal-container-V93EZUSZ7GVLW"></div>
-                <Script
-                  src="https://www.paypal.com/sdk/js?client-id=BAAXXvKchMc6hgXGX0K_flnYbAEsffbx4TlPcTV6O3epK9hFZSqkPFjKscw7FrPBNA0U81fElUFCbfcmc4&components=hosted-buttons&enable-funding=venmo&currency=USD"
-                  onLoad={() => {
-                    // @ts-ignore
-                    if (window.paypal && window.paypal.HostedButtons) {
-                      // @ts-ignore
-                      window.paypal
-                        .HostedButtons({
-                          hostedButtonId: "V93EZUSZ7GVLW",
-                        })
-                        .render("#paypal-container-V93EZUSZ7GVLW")
-                    }
-                  }}
-                />
+                <PayPalButton />
                 <p className="text-sm text-muted-foreground mt-6">
                   For questions about donations, please contact us at narcoguard607@gmail.com
                 </p>

@@ -178,7 +178,9 @@ export default function RootLayout({
               <AccessibilityControls />
             </Suspense>
             <Toaster />
-            <Analytics />
+            <Suspense fallback={null}>
+              <Analytics />
+            </Suspense>
           </ThemeProvider>
         </RootErrorBoundary>
       </body>
